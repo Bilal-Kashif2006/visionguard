@@ -1,0 +1,9 @@
+archive/
+archive.zip
+audit_output/
+mlflow_output/
+mlruns/
+model_output/
+model_output_smoke/
+__pycache__/
+.*/
