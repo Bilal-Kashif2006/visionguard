@@ -1,0 +1,183 @@
+2026-11-11T18:10:20.167017423Z ==> Downloading cache...
+2026-11-11T18:10:20.191210516Z ==> Cloning from https://github.com/Bilal-Kashif2006/visionguard
+2026-11-11T18:10:26.049941738Z ==> Checking out commit fb3b9a94f4c13785ebaa8509d6c2089b4c0c6d6c in branch main
+2026-11-11T18:10:27.446128235Z ==> Downloaded and extracted 814 MiB cache in 7s.
+2026-11-11T18:10:27.756491059Z ==> Using Python version 3.12.3 via environment variable PYTHON_VERSION
+2026-11-11T18:10:27.756499879Z ==> Docs on specifying a Python version: https://render.com/docs/python-version
+2026-11-11T18:10:27.756890193Z ==> Installing Python version 3.12.3...
+2026-11-11T18:10:33.562625908Z ==> Using Poetry version 2.1.3 (default)
+2026-11-11T18:10:33.602914329Z ==> Docs on specifying a Poetry version: https://render.com/docs/poetry-version
+2026-11-11T18:10:33.65012377Z ==> Running build command 'python -m pip install --upgrade pip && python -m pip install -r requirements-render.txt && mkdir -p model_output_smoke && curl -fL -H "Authorization: token ${DAGSHUB_TOKEN}" "${MODEL_URL}" -o model_output_smoke/transfer_mobilenetv2_final.keras'...
+2026-11-11T18:10:33.956725493Z Requirement already satisfied: pip in ./.venv/lib/python3.12/site-packages (24.0)
+2026-11-11T18:10:34.035721061Z Collecting pip
+2026-11-11T18:10:34.036846388Z   Using cached pip-26.3-py3-none-any.whl.metadata (4.6 kB)
+2026-11-11T18:10:34.039533695Z Using cached pip-26.3-py3-none-any.whl (2.0 MB)
+2026-11-11T18:10:34.064005616Z Installing collected packages: pip
+2026-11-11T18:10:34.064110079Z   Attempting uninstall: pip
+2026-11-11T18:10:34.065669077Z     Found existing installation: pip 24.0
+2026-11-11T18:10:34.095922637Z     Uninstalling pip-24.0:
+2026-11-11T18:10:34.10091757Z       Successfully uninstalled pip-24.0
+2026-11-11T18:10:34.841353424Z Successfully installed pip-26.3
+2026-11-11T18:10:35.452765145Z Collecting Flask==3.1.3 (from -r requirements-render.txt (line 1))
+2026-11-11T18:10:35.454042232Z   Using cached flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+2026-11-11T18:10:35.531895893Z Collecting gunicorn==26.2.0 (from -r requirements-render.txt (line 2))
+2026-11-11T18:10:35.532957453Z   Using cached gunicorn-26.2.0-py3-none-any.whl.metadata (5.5 kB)
+2026-11-11T18:10:35.825389714Z Collecting SQLAlchemy==2.0.44 (from -r requirements-render.txt (line 3))
+2026-11-11T18:10:35.826537169Z   Using cached sqlalchemy-2.0.44-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (9.5 kB)
+2026-11-11T18:10:35.906015242Z Collecting psycopg==3.2.12 (from psycopg[binary]==3.2.12->-r requirements-render.txt (line 4))
+2026-11-11T18:10:35.907011616Z   Using cached psycopg-3.2.12-py3-none-any.whl.metadata (4.5 kB)
+2026-11-11T18:10:36.104453244Z Collecting numpy==2.5.4 (from -r requirements-render.txt (line 5))
+2026-11-11T18:10:36.105579808Z   Using cached numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+2026-11-11T18:10:36.279519166Z Collecting Pillow==13.0.0 (from -r requirements-render.txt (line 6))
+2026-11-11T18:10:36.28064518Z   Using cached pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+2026-11-11T18:10:36.406002065Z Collecting tensorflow==2.21.0 (from -r requirements-render.txt (line 7))
+2026-11-11T18:10:36.40711135Z   Using cached tensorflow-2.21.0-cp312-cp312-manylinux_2_27_x86_64.whl.metadata (4.4 kB)
+2026-11-11T18:10:36.481547155Z Collecting blinker>=1.9.0 (from Flask==3.1.3->-r requirements-render.txt (line 1))
+2026-11-11T18:10:36.482519366Z   Using cached blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+2026-11-11T18:10:36.558592722Z Collecting click>=8.1.3 (from Flask==3.1.3->-r requirements-render.txt (line 1))
+2026-11-11T18:10:36.559961544Z   Using cached click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+2026-11-11T18:10:36.635902962Z Collecting itsdangerous>=2.2.0 (from Flask==3.1.3->-r requirements-render.txt (line 1))
+2026-11-11T18:10:36.637467707Z   Using cached itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+2026-11-11T18:10:36.733888444Z Collecting jinja2>=3.1.2 (from Flask==3.1.3->-r requirements-render.txt (line 1))
+2026-11-11T18:10:36.735452585Z   Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2026-11-11T18:10:36.869281885Z Collecting markupsafe>=2.1.1 (from Flask==3.1.3->-r requirements-render.txt (line 1))
+2026-11-11T18:10:36.87095137Z   Using cached markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+2026-11-11T18:10:36.950972132Z Collecting werkzeug>=3.1.0 (from Flask==3.1.3->-r requirements-render.txt (line 1))
+2026-11-11T18:10:36.952081741Z   Using cached werkzeug-3.1.9-py3-none-any.whl.metadata (4.1 kB)
+2026-11-11T18:10:37.11932048Z Collecting greenlet>=1 (from SQLAlchemy==2.0.44->-r requirements-render.txt (line 3))
+2026-11-11T18:10:37.120441388Z   Using cached greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+2026-11-11T18:10:37.196874684Z Collecting typing-extensions>=4.6.0 (from SQLAlchemy==2.0.44->-r requirements-render.txt (line 3))
+2026-11-11T18:10:37.197854448Z   Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+2026-11-11T18:10:37.274280926Z Collecting absl-py>=1.0.0 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:37.275306513Z   Using cached absl_py-2.5.1-py3-none-any.whl.metadata (3.3 kB)
+2026-11-11T18:10:37.349947682Z Collecting astunparse>=1.6.0 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:37.351042295Z   Using cached astunparse-1.6.3-py2.py3-none-any.whl.metadata (4.4 kB)
+2026-11-11T18:10:37.425824646Z Collecting flatbuffers>=25.9.23 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:37.426925207Z   Using cached flatbuffers-25.12.19-py2.py3-none-any.whl.metadata (1.0 kB)
+2026-11-11T18:10:37.500481982Z Collecting gast!=0.5.0,!=0.5.1,!=0.5.2,>=0.2.1 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:37.501565368Z   Using cached gast-0.7.0-py3-none-any.whl.metadata (1.5 kB)
+2026-11-11T18:10:37.576168464Z Collecting google_pasta>=0.1.1 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:37.577179862Z   Using cached google_pasta-0.2.0-py3-none-any.whl.metadata (814 bytes)
+2026-11-11T18:10:37.657057566Z Collecting libclang>=13.0.0 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:37.658608255Z   Using cached libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl.metadata (5.2 kB)
+2026-11-11T18:10:37.733919556Z Collecting opt_einsum>=2.3.2 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:37.735415386Z   Using cached opt_einsum-3.4.0-py3-none-any.whl.metadata (6.3 kB)
+2026-11-11T18:10:37.81788307Z Collecting packaging (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:37.818884749Z   Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-11T18:10:37.994166117Z Collecting protobuf<8.0.0,>=6.31.1 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:37.995463311Z   Using cached protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+2026-11-11T18:10:38.086187342Z Collecting requests<3,>=2.21.0 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:38.087316744Z   Using cached requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+2026-11-11T18:10:38.225604782Z Collecting setuptools (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:38.226790405Z   Using cached setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+2026-11-11T18:10:38.304268448Z Collecting six>=1.12.0 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:38.305452001Z   Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+2026-11-11T18:10:38.382411712Z Collecting termcolor>=1.1.0 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:38.38376262Z   Using cached termcolor-3.3.0-py3-none-any.whl.metadata (6.5 kB)
+2026-11-11T18:10:38.788261303Z Collecting wrapt>=1.11.0 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:38.789434198Z   Using cached wrapt-2.5.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (7.6 kB)
+2026-11-11T18:10:39.245429466Z Collecting grpcio<2.0,>=1.24.3 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:39.246597548Z   Using cached grpcio-1.85.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (3.8 kB)
+2026-11-11T18:10:39.352316962Z Collecting keras>=3.12.0 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:39.35343161Z   Using cached keras-3.15.1-py3-none-any.whl.metadata (6.4 kB)
+2026-11-11T18:10:39.455663224Z Collecting h5py<3.15.0,>=3.11.0 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:39.456779772Z   Using cached h5py-3.14.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (2.7 kB)
+2026-11-11T18:10:39.540903703Z Collecting ml_dtypes<1.0.0,>=0.5.1 (from tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:39.541914189Z   Using cached ml_dtypes-0.6.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+2026-11-11T18:10:39.713422516Z Collecting psycopg-binary==3.2.12 (from psycopg[binary]==3.2.12->-r requirements-render.txt (line 4))
+2026-11-11T18:10:39.714583779Z   Using cached psycopg_binary-3.2.12-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.9 kB)
+2026-11-11T18:10:39.866625187Z Collecting charset_normalizer<4,>=2 (from requests<3,>=2.21.0->tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:39.86780349Z   Using cached charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+2026-11-11T18:10:39.945794773Z Collecting idna<4,>=2.5 (from requests<3,>=2.21.0->tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:39.946829752Z   Using cached idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+2026-11-11T18:10:40.028492794Z Collecting urllib3<3,>=1.26 (from requests<3,>=2.21.0->tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:40.029488135Z   Using cached urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+2026-11-11T18:10:40.107965022Z Collecting certifi>=2023.5.7 (from requests<3,>=2.21.0->tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:40.108987565Z   Using cached certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+2026-11-11T18:10:40.190092309Z Collecting wheel<1.0,>=0.23.0 (from astunparse>=1.6.0->tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:40.191183555Z   Using cached wheel-0.48.0-py3-none-any.whl.metadata (2.3 kB)
+2026-11-11T18:10:40.287179187Z Collecting rich (from keras>=3.12.0->tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:40.288321662Z   Using cached rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+2026-11-11T18:10:40.36377293Z Collecting namex (from keras>=3.12.0->tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:40.364812164Z   Using cached namex-0.1.0-py3-none-any.whl.metadata (322 bytes)
+2026-11-11T18:10:40.521373196Z Collecting optree (from keras>=3.12.0->tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:40.522544449Z   Using cached optree-0.20.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (32 kB)
+2026-11-11T18:10:40.613216841Z Collecting markdown-it-py>=2.2.0 (from rich->keras>=3.12.0->tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:40.675649393Z   Downloading markdown_it_py-4.3.0-py3-none-any.whl.metadata (7.9 kB)
+2026-11-11T18:10:40.760815412Z Collecting pygments<3.0.0,>=2.13.0 (from rich->keras>=3.12.0->tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:40.76241469Z   Using cached pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+2026-11-11T18:10:40.837930977Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->keras>=3.12.0->tensorflow==2.21.0->-r requirements-render.txt (line 7))
+2026-11-11T18:10:40.838983796Z   Using cached mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+2026-11-11T18:10:40.842607421Z Using cached flask-3.1.3-py3-none-any.whl (103 kB)
+2026-11-11T18:10:40.843557132Z Using cached gunicorn-26.2.0-py3-none-any.whl (228 kB)
+2026-11-11T18:10:40.844583606Z Using cached sqlalchemy-2.0.44-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (3.3 MB)
+2026-11-11T18:10:40.84663491Z Using cached psycopg-3.2.12-py3-none-any.whl (206 kB)
+2026-11-11T18:10:40.847603764Z Using cached numpy-2.5.4-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+2026-11-11T18:10:40.853725788Z Using cached pillow-13.0.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+2026-11-11T18:10:40.85687318Z Using cached tensorflow-2.21.0-cp312-cp312-manylinux_2_27_x86_64.whl (572.6 MB)
+2026-11-11T18:10:41.037940474Z Using cached psycopg_binary-3.2.12-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (4.4 MB)
+2026-11-11T18:10:41.040380203Z Using cached grpcio-1.85.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (7.4 MB)
+2026-11-11T18:10:41.043924397Z Using cached h5py-3.14.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.9 MB)
+2026-11-11T18:10:41.04639617Z Using cached ml_dtypes-0.6.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (409 kB)
+2026-11-11T18:10:41.047460317Z Using cached protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+2026-11-11T18:10:41.048504297Z Using cached requests-2.34.2-py3-none-any.whl (73 kB)
+2026-11-11T18:10:41.049445036Z Using cached charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+2026-11-11T18:10:41.050429964Z Using cached idna-3.20-py3-none-any.whl (69 kB)
+2026-11-11T18:10:41.051380513Z Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+2026-11-11T18:10:41.052315016Z Using cached urllib3-2.8.0-py3-none-any.whl (135 kB)
+2026-11-11T18:10:41.053265951Z Using cached absl_py-2.5.1-py3-none-any.whl (137 kB)
+2026-11-11T18:10:41.054256169Z Using cached astunparse-1.6.3-py2.py3-none-any.whl (12 kB)
+2026-11-11T18:10:41.055167697Z Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+2026-11-11T18:10:41.056077703Z Using cached wheel-0.48.0-py3-none-any.whl (33 kB)
+2026-11-11T18:10:41.057002801Z Using cached blinker-1.9.0-py3-none-any.whl (8.5 kB)
+2026-11-11T18:10:41.057911349Z Using cached certifi-2026.10.23-py3-none-any.whl (135 kB)
+2026-11-11T18:10:41.058866718Z Using cached click-8.5.1-py3-none-any.whl (126 kB)
+2026-11-11T18:10:41.059822525Z Using cached flatbuffers-25.12.19-py2.py3-none-any.whl (26 kB)
+2026-11-11T18:10:41.06070239Z Using cached gast-0.7.0-py3-none-any.whl (22 kB)
+2026-11-11T18:10:41.061647675Z Using cached google_pasta-0.2.0-py3-none-any.whl (57 kB)
+2026-11-11T18:10:41.062582143Z Using cached greenlet-3.5.6-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (621 kB)
+2026-11-11T18:10:41.063698807Z Using cached itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+2026-11-11T18:10:41.064607674Z Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+2026-11-11T18:10:41.06557312Z Using cached keras-3.15.1-py3-none-any.whl (2.4 MB)
+2026-11-11T18:10:41.067278412Z Using cached libclang-18.1.1-py2.py3-none-manylinux2010_x86_64.whl (24.5 MB)
+2026-11-11T18:10:41.075773099Z Using cached markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+2026-11-11T18:10:41.076695016Z Using cached opt_einsum-3.4.0-py3-none-any.whl (71 kB)
+2026-11-11T18:10:41.077647179Z Using cached packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-11T18:10:41.07861143Z Using cached termcolor-3.3.0-py3-none-any.whl (7.7 kB)
+2026-11-11T18:10:41.079529138Z Using cached werkzeug-3.1.9-py3-none-any.whl (228 kB)
+2026-11-11T18:10:41.080520118Z Using cached wrapt-2.5.2-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (250 kB)
+2026-11-11T18:10:41.081526785Z Using cached namex-0.1.0-py3-none-any.whl (5.9 kB)
+2026-11-11T18:10:41.082439622Z Using cached optree-0.20.0-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (488 kB)
+2026-11-11T18:10:41.083519311Z Using cached rich-15.0.0-py3-none-any.whl (310 kB)
+2026-11-11T18:10:41.084543279Z Using cached pygments-2.21.0-py3-none-any.whl (1.3 MB)
+2026-11-11T18:10:41.08806171Z Downloading markdown_it_py-4.3.0-py3-none-any.whl (96 kB)
+2026-11-11T18:10:41.115273016Z Using cached mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+2026-11-11T18:10:41.116700322Z Using cached setuptools-84.2.1-py3-none-any.whl (876 kB)
+2026-11-11T18:10:42.077629455Z Installing collected packages: namex, libclang, flatbuffers, wrapt, urllib3, typing-extensions, termcolor, six, setuptools, pygments, psycopg-binary, protobuf, Pillow, packaging, opt_einsum, numpy, mdurl, markupsafe, itsdangerous, idna, gunicorn, greenlet, gast, click, charset_normalizer, certifi, blinker, absl-py, wheel, werkzeug, SQLAlchemy, requests, psycopg, optree, ml_dtypes, markdown-it-py, jinja2, h5py, grpcio, google_pasta, rich, Flask, astunparse, keras, tensorflow
+2026-11-11T18:11:01.039902374Z 
+2026-11-11T18:11:01.042603962Z Successfully installed Flask-3.1.3 Pillow-13.0.0 SQLAlchemy-2.0.44 absl-py-2.5.1 astunparse-1.6.3 blinker-1.9.0 certifi-2026.10.23 charset_normalizer-3.5.2 click-8.5.1 flatbuffers-25.12.19 gast-0.7.0 google_pasta-0.2.0 greenlet-3.5.6 grpcio-1.85.1 gunicorn-26.2.0 h5py-3.14.0 idna-3.20 itsdangerous-2.2.0 jinja2-3.1.6 keras-3.15.1 libclang-18.1.1 markdown-it-py-4.3.0 markupsafe-3.0.4 mdurl-0.1.2 ml_dtypes-0.6.0 namex-0.1.0 numpy-2.5.4 opt_einsum-3.4.0 optree-0.20.0 packaging-26.3 protobuf-7.36.2 psycopg-3.2.12 psycopg-binary-3.2.12 pygments-2.21.0 requests-2.34.2 rich-15.0.0 setuptools-84.2.1 six-1.17.0 tensorflow-2.21.0 termcolor-3.3.0 typing-extensions-4.16.0 urllib3-2.8.0 werkzeug-3.1.9 wheel-0.48.0 wrapt-2.5.2
+2026-11-11T18:11:01.169054725Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2026-11-11T18:11:01.169064214Z                                  Dload  Upload   Total   Spent    Left  Speed
+2026-11-11T18:11:04.380213635Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 20.8M    0 12832    0     0  14968      0  0:24:21 --:--:--  0:24:21 14955  1 20.8M    1  407k    0     0   222k      0  0:01:36  0:00:01  0:01:35  222k 50 20.8M   50 10.5M    0     0  3859k      0  0:00:05  0:00:02  0:00:03 3858k100 20.8M  100 20.8M    0     0  6652k      0  0:00:03  0:00:03 --:--:-- 6653k
+2026-11-11T18:11:05.773843166Z ==> Uploading build...
+2026-11-11T18:11:25.08771785Z ==> Uploaded in 14.6s. Compression took 4.7s
+2026-11-11T18:11:25.101014249Z ==> Build successful 🎉
+2026-11-11T18:11:27.066997833Z ==> Deploying...
+2026-11-11T18:11:27.27080512Z ==> Setting WEB_CONCURRENCY=1 by default, based on available CPUs in the instance
+2026-11-11T18:12:20.808797154Z ==> Running 'gunicorn --bind 0.0.0.0:$PORT --workers 1 --timeout 120 "app:create_app()"'
+2026-11-11T18:12:30.435047967Z ==> No open ports detected, continuing to scan...
+2026-11-11T18:12:30.949012706Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
+2026-11-11T18:12:31.285073473Z WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+2026-11-11T18:12:31.285100454Z I0000 00:00:1794420751.284947      57 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2026-11-11T18:12:31.592377014Z I0000 00:00:1794420751.592233      57 cpu_feature_guard.cc:227] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2026-11-11T18:12:31.592401175Z To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2026-11-11T18:12:56.789101202Z WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+2026-11-11T18:12:56.789128993Z I0000 00:00:1794420776.788725      57 cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2026-11-11T18:13:05.58576507Z E0000 00:00:1794420785.585616      57 cuda_platform.cc:52] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+2026-11-11T18:13:15.690819978Z free(): invalid pointer
+2026-11-11T18:13:18.12083924Z ==> Exited with status 134
+2026-11-11T18:13:18.127796535Z ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
+2026-11-11T18:13:18.297785701Z ==> Instance srv-dbq7ol49v7es73bab900-9tdsh restarted
+2026-11-11T18:13:25.187245313Z ==> Running 'gunicorn --bind 0.0.0.0:$PORT --workers 1 --timeout 120 "app:create_app()"'
+2026-11-11T18:13:31.560022679Z ==> No open ports detected, continuing to scan...
+2026-11-11T18:13:31.924594504Z ==> Docs on specifying a port: https://render.com/docs/web-services#port-binding
