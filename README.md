@@ -48,3 +48,8 @@ read only from environment variables.
 For Render, use `requirements-render.txt` instead of the full training
 requirements. It contains only the Flask, database, inference, and Gunicorn
 runtime dependencies.
+
+If Render exits with a native TensorFlow error such as `free(): invalid
+pointer`, temporarily use `render_diagnostics:application` as the start
+target. It prints markers before TensorFlow import, application import, and
+model loading so the failing phase is visible in Render logs.
