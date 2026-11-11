@@ -1,4 +1,5 @@
 mlflow.db
+visionguard.db
 archive/
 archive.zip
 audit_output/
@@ -8,3 +9,4 @@ model_output/
 model_output_smoke/
 __pycache__/
 .*/
+.env

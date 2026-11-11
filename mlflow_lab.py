@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 from pathlib import Path
 
 import matplotlib
@@ -81,17 +82,36 @@ def train_run(learning_rate: float, output_dir: Path) -> None:
         mlflow.tensorflow.log_model(model, "model")
 
 
+def validate_remote_credentials(tracking_uri: str) -> None:
+    if not tracking_uri.startswith(("http://", "https://")):
+        return
+    missing = [
+        name
+        for name in ("MLFLOW_TRACKING_USERNAME", "MLFLOW_TRACKING_PASSWORD")
+        if not os.getenv(name)
+    ]
+    if missing:
+        raise RuntimeError(
+            "Remote MLflow requires non-empty "
+            + ", ".join(missing)
+            + ". Set the password with `read -r -s MLFLOW_TRACKING_PASSWORD` "
+            "and then run `export MLFLOW_TRACKING_PASSWORD`."
+        )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output-dir", type=Path, default=Path("mlflow_output"))
     parser.add_argument(
         "--tracking-uri",
-        default="sqlite:///mlflow.db",
+        default=os.getenv("MLFLOW_TRACKING_URI", "sqlite:///mlflow.db"),
         help="Local MLflow tracking backend (SQLite is the current supported default).",
     )
     args = parser.parse_args()
     args.output_dir.mkdir(parents=True, exist_ok=True)
-    mlflow.set_tracking_uri(args.tracking_uri)
+    tracking_uri = args.tracking_uri
+    validate_remote_credentials(tracking_uri)
+    mlflow.set_tracking_uri(tracking_uri)
     mlflow.set_experiment("fashion-mnist-learning-rate-comparison")
     for learning_rate in (1e-3, 1e-4):
         train_run(learning_rate, args.output_dir)

@@ -1,0 +1,11 @@
+.git
+.env
+__pycache__
+*.pyc
+archive
+archive.zip
+mlflow.db
+mlruns
+model_output
+model_output_smoke/*.png
+model_output_smoke/*.csv

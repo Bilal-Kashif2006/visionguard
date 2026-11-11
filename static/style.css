@@ -1,0 +1,4 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #172033; background: #f3f6fb; }
+body { margin: 0; } nav { display: flex; gap: 1.5rem; padding: 1rem 8%; background: #172033; } nav a { color: white; text-decoration: none; font-weight: 600; }
+main { max-width: 860px; margin: 4rem auto; padding: 0 1rem; } .card { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px #17203318; }
+form { display: grid; gap: 1rem; margin-top: 2rem; } input, button, .button { font: inherit; padding: .75rem; } button, .button { border: 0; border-radius: 6px; background: #275dad; color: white; text-decoration: none; cursor: pointer; } .verdict { font-size: 2rem; font-weight: 700; } .caveat { color: #687386; } table { width: 100%; border-collapse: collapse; } th, td { padding: .7rem; border-bottom: 1px solid #dfe5ef; text-align: left; }

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>Prediction history</h1>
+  {% if predictions %}
+  <table><tr><th>Time</th><th>File</th><th>Decision</th><th>Confidence</th><th>Model</th></tr>
+  {% for prediction in predictions %}
+  <tr><td>{{ prediction.created_at }}</td><td>{{ prediction.filename }}</td><td>{{ prediction.label }}</td><td>{{ "%.1f"|format(prediction.confidence * 100) }}%</td><td>{{ prediction.model_name }}</td></tr>
+  {% endfor %}</table>
+  {% else %}<p>No predictions have been recorded yet.</p>{% endif %}
+</section>
+{% endblock %}

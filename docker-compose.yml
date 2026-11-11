@@ -1,0 +1,30 @@
+services:
+  database:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-visionguard}
+      POSTGRES_USER: ${POSTGRES_USER:-visionguard}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  web:
+    build: .
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-visionguard}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@database:5432/${POSTGRES_DB:-visionguard}
+      MODEL_PATH: /app/model_output_smoke/transfer_mobilenetv2_final.keras
+      MODEL_THRESHOLD: ${MODEL_THRESHOLD:-0.23}
+    volumes:
+      - ${MODEL_PATH:-./model_output_smoke/transfer_mobilenetv2_final.keras}:/app/model_output_smoke/transfer_mobilenetv2_final.keras:ro
+    ports:
+      - "5000:5000"
+    depends_on:
+      database:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  postgres_data:

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>Is this image AI-generated?</h1>
+  <p>Upload an image for a VisionGuard prediction. The result is a model estimate, not proof of provenance.</p>
+  <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+    <label for="image">Image (JPG, PNG, or WEBP; max 5 MB)</label>
+    <input id="image" name="image" type="file" accept=".jpg,.jpeg,.png,.webp" required>
+    <button type="submit">Analyze image</button>
+  </form>
+</section>
+{% endblock %}

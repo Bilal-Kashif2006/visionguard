@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h1>Result</h1>
+  <p class="verdict">{{ result.label }}</p>
+  <p>Confidence: <strong>{{ "%.1f"|format(result.confidence * 100) }}%</strong></p>
+  <p class="caveat">This classifier can be wrong, especially on edited, compressed, or unusual images.</p>
+  <p>File: {{ filename }}</p>
+  <a class="button" href="{{ url_for('index') }}">Analyze another image</a>
+</section>
+{% endblock %}
