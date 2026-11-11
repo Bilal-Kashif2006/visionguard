@@ -9,7 +9,7 @@ def test_render_postgres_url_uses_psycopg3(monkeypatch):
         "postgresql://user:password@host.example.com/database",
     )
     assert database_url() == (
-        "postgresql+psycopg://user:password@host.example.com/database"
+        "postgresql+psycopg2://user:password@host.example.com/database"
     )
 
 

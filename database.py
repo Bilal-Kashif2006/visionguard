@@ -30,11 +30,12 @@ class Prediction(Base):
 def database_url() -> str:
     url = os.getenv("DATABASE_URL", "sqlite:///visionguard.db")
     # Render supplies PostgreSQL URLs without a SQLAlchemy driver name.
-    # The deployment uses psycopg 3, so select its dialect explicitly.
+    # The deployment uses psycopg2-binary for a stable native PostgreSQL
+    # driver on Render's Python runtime.
     if url.startswith("postgres://"):
-        return "postgresql+psycopg://" + url.removeprefix("postgres://")
+        return "postgresql+psycopg2://" + url.removeprefix("postgres://")
     if url.startswith("postgresql://"):
-        return "postgresql+psycopg://" + url.removeprefix("postgresql://")
+        return "postgresql+psycopg2://" + url.removeprefix("postgresql://")
     return url
 
 
