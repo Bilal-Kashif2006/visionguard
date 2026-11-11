@@ -44,3 +44,7 @@ error analysis, and Keras Tuner searches. `mlflow_lab.py`,
 `mlflow_visionguard.py`, and `register_champion.py` cover local/remote
 experiment tracking and model registration. Remote MLflow credentials are
 read only from environment variables.
+
+For Render, use `requirements-render.txt` instead of the full training
+requirements. It contains only the Flask, database, inference, and Gunicorn
+runtime dependencies.

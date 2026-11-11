@@ -28,7 +28,14 @@ class Prediction(Base):
 
 
 def database_url() -> str:
-    return os.getenv("DATABASE_URL", "sqlite:///visionguard.db")
+    url = os.getenv("DATABASE_URL", "sqlite:///visionguard.db")
+    # Render supplies PostgreSQL URLs without a SQLAlchemy driver name.
+    # The deployment uses psycopg 3, so select its dialect explicitly.
+    if url.startswith("postgres://"):
+        return "postgresql+psycopg://" + url.removeprefix("postgres://")
+    if url.startswith("postgresql://"):
+        return "postgresql+psycopg://" + url.removeprefix("postgresql://")
+    return url
 
 
 def create_database_engine():
