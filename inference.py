@@ -41,7 +41,11 @@ class VisionGuardPredictor:
         with Image.open(BytesIO(image_bytes)) as image:
             image = image.convert("RGB").resize(IMAGE_SIZE)
             batch = np.asarray(image, dtype="float32")[None, ...]
-        probability_real = float(self.model.predict(batch, verbose=0).ravel()[0])
+        # Use a direct eager forward pass instead of model.predict(), whose
+        # input pipeline and callback machinery add unnecessary overhead here.
+        probability_real = float(
+            np.asarray(self.model(batch, training=False)).ravel()[0]
+        )
         is_real = probability_real >= self.threshold
         confidence = probability_real if is_real else 1.0 - probability_real
         return {
